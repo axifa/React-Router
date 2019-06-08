@@ -5,7 +5,7 @@ import AccountBalance from './AccountBalance';
 
 import React, { Component } from 'react';
     
-class Home extends Component {
+class Home extends React.Component {
   render() {
     return (
         <div>
