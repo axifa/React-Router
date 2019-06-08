@@ -5,8 +5,8 @@ import './index.css';
 import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 
 import App from './App';
-import Home from './Home';
-import AccountBalance from './AccountBalance';
+// import Home from './Home';
+// import AccountBalance from './AccountBalance';
 import Credits from './Credit';
 
 
@@ -26,5 +26,6 @@ const routing =(
     </Router>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById('root'));
+// make sure to write routing here! ! !
 
