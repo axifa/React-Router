@@ -4,6 +4,7 @@ import Home from './Home';
 import UserProfile from './UserProfile';
 import LogIn from './LogIn';
 import axios from 'axios';
+import Debit from './Debit';
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
       accountBalance: 14568.27,
       totalDebit:1,
       totalCredit:2,
+      debitData: [],
       currentUser: {
         userName: 'bob_loblaw',
         memberSince: '08/23/99',
@@ -35,7 +37,7 @@ class App extends Component {
     axios.get("https://moj-api.herokuapp.com/debits")
     .then( (response) =>{
       let total = this.addAmount(response.data);
-      this.setState({totalDebit: total});
+      this.setState({totalDebit: total, debitData:response.data});
       this.getCreditData();
       
 
@@ -96,13 +98,15 @@ class App extends Component {
               accountBalance={this.state.accountBalance} />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-
+    const DebitComponet = () => (<Debit debitData={this.state.debitData} accountBalance={this.state.accountBalance} />);
+    
     return (
         <Router>
           <div>
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
+            <Route exact path="/debit" render={DebitComponet}/>
           </div>
         </Router>
     );
