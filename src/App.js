@@ -72,22 +72,23 @@ class App extends Component {
     
   }
 
-  // shouldComponentUpdate(nextProps,nextState){
-  //   console.log("current-state")
-  //   console.log(this.state);
-
-  //     console.log("next-state")
-  //     console.log(nextState);
-  //     if(nextState.totalCredit === this.state.totalCredit  && nextState.totalDebit === this.state.totalDebit){
-  //       return true;
-  //     }
-  //     return true;
-  // }
-
+  
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
     newUser.userName = logInInfo.userName
     this.setState({currentUser: newUser})
+  }
+
+  updateDebit = (amount, debitData) =>{
+
+  
+    this.setState((state) =>{
+      return { 
+        accountBalance: (state.totalCredit -(state.totalDebit + amount)).toFixed(2) , 
+        totalDebit: state.totalDebit + amount, 
+        debitData: [debitData, ...this.state.debitData]
+      }
+    });
   }
 
   render() {
@@ -98,7 +99,7 @@ class App extends Component {
               accountBalance={this.state.accountBalance} />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-    const DebitComponet = () => (<Debit debitData={this.state.debitData} accountBalance={this.state.accountBalance} />);
+    const DebitComponet = () => (<Debit debitData={this.state.debitData} accountBalance={this.state.accountBalance} updateDebit={this.updateDebit} />);
     
     return (
         <Router>
