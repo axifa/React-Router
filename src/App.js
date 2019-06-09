@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import './App.css';
 import Home from './Home';
 import UserProfile from './UserProfile';
 import LogIn from './LogIn';
 import axios from 'axios';
 import Debit from './Debit';
+
 
 class App extends Component {
 
@@ -103,10 +105,10 @@ class App extends Component {
     
     return (
         <Router>
-          <div>
-            <Route exact path="/" render={HomeComponent}/>
+          <div>      
+            <Route exact path="/home" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
-            <Route exact path="/login" render={LogInComponent}/>
+            <Route exact path="/" render={LogInComponent}/>
             <Route exact path="/debit" render={DebitComponet}/>
           </div>
         </Router>

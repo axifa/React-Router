@@ -19,7 +19,7 @@ class Debit extends React.Component{
 
         container = data.map( (element) =>{
             return(
-                <DebitDescription key={element.id} descrition = {element.description} amount={element.amount} date={element.date} />
+                <DebitDescription key={element.id} description = {element.description} amount={element.amount} date={element.date} />
             )
         });
 
@@ -69,12 +69,14 @@ class Debit extends React.Component{
 
     render(){
         return(
-            <div>
-                <h1>Debit</h1>
-                <Link to="/">Home</Link>
+            <div className="container">
+                <h1 className="heading">Debit</h1>
+                <Link to="/home">Home</Link>
+                <br />
+                <Link to="/userProfile">User Profile</Link>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
 
-                <form onSubmit={this.addDebit}>
+                <form onSubmit={this.addDebit} className="debit-form">
                     <h2>Adding Debit</h2>
                     <input type="text" value={this.state.desc}  placeholder="Enter debit description" onChange={this.changeDesc} />
                     <input type="text" value={this.state.amount} placeholder="Enter debit amount" onChange={this.changeAmount} />

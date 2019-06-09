@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
-        <div>
+        <div className="container">
           {/* <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/> */}
-          <h1>Bank of React</h1>
+          <h1  className="heading">Bank of React</h1>
           <AccountBalance accountBalance={this.props.accountBalance}/>
           <Link to="/userProfile">User Profile</Link>
           <br />
