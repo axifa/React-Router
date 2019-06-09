@@ -20,13 +20,24 @@
   justify-content: center;
  
 }
-.log-in-form input, .log-in-btn{
+.log-in-form input{
   display: block;
-  width: 100%;
+  
+}
+
+.log-in-form div{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.log-in-form .log-in-btn, .log-in-form input{
+ margin-bottom: 5px;
+ padding: 5px;
 }
 
 .log-in-btn{
-
+  margin-top: 5px;
 }
 
 
