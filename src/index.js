@@ -7,7 +7,8 @@ import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
 // import Home from './Home';
 // import AccountBalance from './AccountBalance';
-import Credits from './Credit';
+import CreditDescription from './CreditDescription';
+import Credit from './Credit';
 
 
 const routing =(
