@@ -4,12 +4,12 @@ import './index.css';
 
 import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 
-import App from './App';
+//import App from './App';
 // import Home from './Home';
 // import AccountBalance from './AccountBalance';
 import CreditDescription from './CreditDescription';
 import Credit from './Credit';
-
+import Home from './Home';
 
 const routing =(
     <Router>
@@ -19,8 +19,8 @@ const routing =(
         </ul>
     
     <Switch>
-        <Route exact path ="/" component ={App}/>
-        <Route path ="/Credit" component ={Credits}/>
+        <Route exact path ="/" component ={Home}/>
+        <Route path ="/Credit" component ={Credit}/>
 
     </Switch>
     </div>

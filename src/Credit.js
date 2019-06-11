@@ -1,10 +1,12 @@
 
 import ReactDOM from 'react-dom';
 import './App.css';
-
+import CreditDescription from './CreditDescription';
+import {Link}  from 'react-router-dom';
 import React from 'react';
+import AccountBalance from './AccountBalance';
     
-class Credits extends React.Component {
+class Credit extends React.Component {
   constructor(props){
     super(props);
 
@@ -91,3 +93,5 @@ render(){
     )
 }
 }
+
+export default Credit;
